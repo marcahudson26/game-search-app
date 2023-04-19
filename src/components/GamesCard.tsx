@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Image } from "@chakra-ui/react";
+import { Card, Image, CardBody, Heading } from "@chakra-ui/react";
 import { Games } from "../hooks/useGames";
 
 interface Props {
@@ -8,7 +8,10 @@ interface Props {
 const GamesCard = ({ game }: Props) => {
   return (
     <Card>
-      <Image></Image>
+      <Image src={game.background_image} />
+      <CardBody>
+        <Heading>{game.name}</Heading>
+      </CardBody>
     </Card>
   );
 };
