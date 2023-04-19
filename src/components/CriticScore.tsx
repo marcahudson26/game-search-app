@@ -1,4 +1,5 @@
-import { Badge } from "@chakra-ui/react";
+import { Badge, HStack } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 interface Props {
   score: number;
@@ -7,14 +8,19 @@ interface Props {
 const CriticScore = ({ score }: Props) => {
   let color = score > 75 ? "green" : score > 60 ? "yellow" : "";
   return (
-    <Badge
-      colorScheme={color}
-      fontSize="15px"
-      paddingX="5px"
-      borderRadius="5px"
-    >
-      {score}
-    </Badge>
+    <>
+      <HStack>
+        <Text>Rating</Text>
+        <Badge
+          colorScheme={color}
+          fontSize="15px"
+          paddingX="5px"
+          borderRadius="5px"
+        >
+          {score}
+        </Badge>
+      </HStack>
+    </>
   );
 };
 
