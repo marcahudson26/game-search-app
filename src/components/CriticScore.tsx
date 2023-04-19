@@ -7,6 +7,9 @@ interface Props {
 
 const CriticScore = ({ score }: Props) => {
   let color = score > 75 ? "green" : score > 60 ? "yellow" : "";
+  if (!score) {
+    return null;
+  }
   return (
     <>
       <HStack>

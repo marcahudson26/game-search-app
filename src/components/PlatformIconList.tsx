@@ -27,12 +27,23 @@ const PlatformIconList = ({ platforms }: Props) => {
     ios: MdPhoneIphone,
     web: BsGlobe,
     android: FaAndroid,
+    // atari: FaJoystick,
+    // "commodore-amiga": FaAndroid,
+    // sega: FaAndroid,
   };
+
   return (
     <HStack marginY="10px">
-      {platforms.map((platform) => (
-        <Icon key={platform.id} as={iconMap[platform.slug]} color="gray.500" />
-      ))}
+      {platforms.map(
+        (platform) =>
+          iconMap[platform.slug] && (
+            <Icon
+              key={platform.id}
+              as={iconMap[platform.slug]}
+              color="gray.500"
+            />
+          )
+      )}
     </HStack>
   );
 };

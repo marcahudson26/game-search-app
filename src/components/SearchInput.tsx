@@ -19,7 +19,13 @@ const SearchInput = ({ onSearch }: Prop) => {
       }}
     >
       <InputGroup>
-        <InputLeftElement children={<BsSearch />} />
+        <InputLeftElement
+          onClick={() => {
+            ref.current?.focus();
+          }}
+        >
+          <BsSearch />
+        </InputLeftElement>
         <Input
           ref={ref}
           borderRadius={20}
