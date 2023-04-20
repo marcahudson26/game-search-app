@@ -9,7 +9,7 @@ interface Prop {
 const NavBar = ({ onSearch }: Prop) => {
   return (
     <HStack padding="10px">
-      <Image src={logo} boxSize="60px" />
+      <Image src={logo} boxSize="60px" alt="Games search" />
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </HStack>
